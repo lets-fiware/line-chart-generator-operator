@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="FISUDA" name="line-chart-generator" version="0.1.0">
+
+    <details>
+        <title>line chart generator</title>
+        <homepage>https://github.com/lets-fiware/line-chart-generator-operator</homepage>
+        <authors>Kazuhito Suda &lt;wirecloud@fisuda.jp&gt;, CoNWeT</authors>
+        <email>wirecloud@fisuda.jp</email>
+        <image></image>
+        <smartphoneimage></smartphoneimage>
+        <description>line chart generator</description>
+        <longdescription>DESCRIPTION.md</longdescription>
+        <changelog>doc/changelog.md</changelog>
+        <doc>doc/userguide.md</doc>
+        <license>Apache2 license</license>
+        <issuetracker>https://github.com/lets-fiware/line-chart-generator-operator/issues</issuetracker>
+    </details>
+
+    <requirements>
+        <!-- Add any extra requirements here -->
+        <!-- <feature name="${feature-name}" /> -->
+    </requirements>
+
+    <preferences>
+        <preference name="type" type="list" label="Chart Type" description="Select chart type" default="line">
+          <option label="line" value="line"/>
+          <option label="spline" value="spline"/>
+          <option label="area" value="area"/>
+          <option label="areaspline" value="areaspline"/>
+        </preference>
+        <preference name="title" type="text" label="Chart Title" description="Title used for the chart" default=""/>
+        <preference name="max" type="text" label="Maximum value" description="Maximum value to display in the chart. If empty, the max value is automatically calculated" default=""/>
+    </preferences>
+
+    <wiring>
+        <inputendpoint name="data-serie" label="Data Serie" description="Data series" type="text" friendcode="data-serie" />
+        <inputendpoint name="timestamps" label="Timestamp List" description="Data timestamps" type="text" friendcode="timestamp-list" />
+        <outputendpoint name="chart-options" label="Chart Data Model" description="Chart options" type="text" friendcode="highchart-options" />
+    </wiring>
+
+    <scripts>
+        <script src="js/main.js"/>
+    </scripts>
+
+</operator>
