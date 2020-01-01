@@ -141,9 +141,14 @@
         build_series();
     };
 
-    // Callback for the endpoints
-    MashupPlatform.wiring.registerCallback("timestamps", timestampCallback);
-    MashupPlatform.wiring.registerCallback("data-serie", dataserieCallback);
+    /* TODO
+     * this if is required for testing, but we have to search a cleaner way
+     */
+    if (window.MashupPlatform != null) {
+        // Callback for the endpoints
+        MashupPlatform.wiring.registerCallback("timestamps", timestampCallback);
+        MashupPlatform.wiring.registerCallback("data-serie", dataserieCallback);
+    }
 
     /* test-code */
     window.timestampCallback = timestampCallback;
