@@ -1,5 +1,10 @@
 # line chart generator operator
 
+[![](https://nexus.lab.fiware.org/repository/raw/public/badges/chapters/visualization.svg)](https://www.fiware.org/developers/catalogue/)
+![](https://img.shields.io/github/license/lets-fiware/line-chart-generator-operator.svg)<br/>
+[![Build Status](https://travis-ci.org/lets-fiware/line-chart-generator-operator.svg?branch=master)](https://travis-ci.org/lets-fiware/line-chart-generator-operator)
+[![Coverage Status](https://coveralls.io/repos/github/lets-fiware/line-chart-generator-operator/badge.svg)](https://coveralls.io/github/lets-fiware/line-chart-generator-operator)
+
 The line chart generator operator is a WireCloud operator that provides the ability to generate line charts.
 This source code has been foked from trend-chart-generator-operator in https://github.com/Wirecloud/agile-dashboards/.
 
