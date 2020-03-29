@@ -19,6 +19,17 @@
     var xAxisUnit;
     var series = [];
 
+    var clearPlot = function clearPlot() {
+        if (window.MashupPlatform != null) {
+            MashupPlatform.wiring.pushEvent("chart-options", {
+                "title": {
+                    "text": MashupPlatform.prefs.get('title')
+                },
+                "series": []
+            });
+        }
+    };
+
     // Creates a serie from a list of data
     var build_serie = function build_serie(serie) {
         // Check if somethings wrong
@@ -40,7 +51,10 @@
         series = [];
 
         // Check if theres data
-        if (values === null || values.length === 0 || timestamps == null || timestamps.length === 0) {
+        if (values == null || values.length === 0 || timestamps == null || timestamps.length === 0) {
+            if (values == null && timestamps == null) {
+                clearPlot();
+            }
             return;
         }
 
@@ -148,6 +162,8 @@
         // Callback for the endpoints
         MashupPlatform.wiring.registerCallback("timestamps", timestampCallback);
         MashupPlatform.wiring.registerCallback("data-serie", dataserieCallback);
+
+        clearPlot();
     }
 
     /* test-code */
