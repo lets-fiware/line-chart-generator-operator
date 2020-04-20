@@ -4,9 +4,9 @@
     <details>
         <title>line chart generator</title>
         <homepage>https://github.com/lets-fiware/line-chart-generator-operator</homepage>
-        <authors>Kazuhito Suda &lt;wirecloud@fisuda.jp&gt;, CoNWeT</authors>
+        <authors>Kazuhito Suda, Álvaro Arranz</authors>
         <email>wirecloud@fisuda.jp</email>
-        <image></image>
+        <image>images/catalogue.png</image>
         <smartphoneimage></smartphoneimage>
         <description>line chart generator</description>
         <longdescription>DESCRIPTION.md</longdescription>
@@ -27,8 +27,11 @@
           <option label="spline" value="spline"/>
           <option label="area" value="area"/>
           <option label="areaspline" value="areaspline"/>
+          <option label="column" value="column"/>
         </preference>
         <preference name="title" type="text" label="Chart Title" description="Title used for the chart" default=""/>
+        <preference name="xtitle" type="text" label="X axis Title" description="Title used for the X axis" default=""/>
+        <preference name="ytitle" type="text" label="Y axis Title" description="Title used for the Y axis" default=""/>
         <preference name="max" type="text" label="Maximum value" description="Maximum value to display in the chart. If empty, the max value is automatically calculated" default=""/>
     </preferences>
 

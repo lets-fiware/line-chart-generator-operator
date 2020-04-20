@@ -12,6 +12,8 @@
                 prefs: {
                     'type': 'line',
                     'title': '',
+                    'xtitle': '',
+                    'ytitle': '',
                     'max': ''
                 },
                 inputs: ['data-serie', 'timestamps'],

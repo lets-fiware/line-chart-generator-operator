@@ -16,7 +16,7 @@
 
     var timestamps = null; // Chart timestamps (X axis)
     var values = null; // Chart data series (Y axis)
-    var xAxisUnit;
+    var yAxisUnit;
     var series = [];
 
     var clearPlot = function clearPlot() {
@@ -61,12 +61,12 @@
         if (!Array.isArray(values[0])) {
             // Single series
             series.push({name: getMetadataVerbose(values), data: build_serie(values)});
-            xAxisUnit = getMetadataVerbose(values);
+            yAxisUnit = getMetadataVerbose(values);
         } else {
             // Multiple series
             values.forEach(function (serie) {
                 series.push({name: getMetadataVerbose(serie), data: build_serie(serie)});
-                xAxisUnit = getMetadataTag(serie);
+                yAxisUnit = getMetadataTag(serie);
             });
         }
 
@@ -82,10 +82,16 @@
 
     // Gets the metadata, if any
     var getMetadataTag = function getMetadataTag(o) {
-        return o.metadata ? o.metadata.tag || "values" : "values";
+        var values = MashupPlatform.prefs.get('ytitle');
+        return o.metadata ? o.metadata.tag || values : values;
     };
     var getMetadataVerbose = function getMetadataMsg(o) {
-        return o.metadata ? o.metadata.verbose || getMetadataTag(o) : "values";
+        var values = MashupPlatform.prefs.get('ytitle');
+        return o.metadata ? o.metadata.verbose || getMetadataTag(o) : values;
+    };
+    var getMetadataVerboseX = function getMetadataMsgX(o) {
+        var values = MashupPlatform.prefs.get('xtitle');
+        return o.metadata ? o.metadata.verbose || getMetadataTag(o) : values;
     };
 
     // Draws the chart
@@ -112,12 +118,12 @@
                     year: '%b'
                 },
                 title: {
-                    text: getMetadataVerbose(timestamps)
+                    text: getMetadataVerboseX(timestamps)
                 }
             },
             yAxis: {
                 title: {
-                    text: xAxisUnit
+                    text: yAxisUnit
                 }
             },
             tooltip: {
