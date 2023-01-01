@@ -55,7 +55,7 @@ available on Read the Docs.
 
 ## Copyright and License
 
-Copyright (c) 2020 Kazuhito Suda<br>
+Copyright (c) 2020-2023 Kazuhito Suda<br>
 Copyright (c) 2020 Future Internet Consulting and Development Solutions S.L.<br>
 Copyright (c) 2015 CoNWeT<br>
 Licensed under the Apache2 license.
