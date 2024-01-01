@@ -2,7 +2,7 @@
  * line-chart-generator
  * https://github.com/lets-fiware/line-chart-generator-operator
  *
- * Copyright (c) 2019-2023 Kazuhito Suda
+ * Copyright (c) 2019-2024 Kazuhito Suda
  * Copyright (c) 2015 CoNWeT
  * Licensed under the Apache2 license.
  *
